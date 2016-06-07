@@ -1,0 +1,58 @@
+{
+  "name": "gulp-qidian-combo",
+  "version": "0.1.9",
+  "description": "html scripts, links combo for gulp",
+  "main": "index.js",
+  "homepage": "https://github.com/PaulGuo/gulp-combo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulGuo/gulp-combo.git"
+  },
+  "keywords": [
+    "gulpplugin",
+    "combo",
+    "html",
+    "css",
+    "script",
+    "url"
+  ],
+  "author": {
+    "name": "PaulGuo",
+    "url": "https://github.com/PaulGuo"
+  },
+  "dependencies": {
+    "through2": "~0.4.1",
+    "cheerio": "^0.17.0"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=0.10"
+  },
+  "bugs": {
+    "url": "https://github.com/PaulGuo/gulp-combo/issues"
+  },
+  "maintainers": [
+    {
+      "name": "paulguo",
+      "email": "badkaikai@gmail.com"
+    }
+  ],
+  "directories": {},
+  "gitHead": "e8cc94aec3a1db6f720d24836dbf7f4688943302",
+  "_id": "gulp-combo@0.1.9",
+  "scripts": {},
+  "_shasum": "386459d2608c11b3e1486e41c6657b79cb023854",
+  "_from": "gulp-combo@>=0.1.9 <0.2.0",
+  "_npmVersion": "1.4.21",
+  "_npmUser": {
+    "name": "paulguo",
+    "email": "badkaikai@gmail.com"
+  },
+  "dist": {
+    "shasum": "386459d2608c11b3e1486e41c6657b79cb023854",
+    "tarball": "http://registry.npmjs.org/gulp-combo/-/gulp-combo-0.1.9.tgz"
+  },
+  "_resolved": "https://registry.npmjs.org/gulp-combo/-/gulp-combo-0.1.9.tgz",
+  "readme": "ERROR: No README data found!"
+}
