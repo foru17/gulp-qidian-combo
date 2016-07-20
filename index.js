@@ -28,7 +28,7 @@ module.exports = function(baseUri, options) {
     baseUri = baseUri || 'http://qidian.gtimg.com/c/=';
     options = options || {};
 
-    console.log(options);
+    // console.log(options);
 
     // console.log(chalk.green('===Qidian.com=== '));
     return through.obj(function(file, enc, cb) {
@@ -55,7 +55,7 @@ module.exports = function(baseUri, options) {
                     _PathJs.push(_links);
                     nocomboUri += '<script type="text/javascript" src="//' + _links[i] + '"></script>' + '\n';
                 }
-                console.log(_PathJs);
+                // console.log(_PathJs);
             }
             uri = baseUri + _rawPathJs.join(options.splitter || ';') + '?v=' + options.updateTime;
             // 定制
@@ -115,7 +115,7 @@ module.exports = function(baseUri, options) {
                 // console.log(_PathCss);
             }
             uri = baseUri + _rawPathCss.join(options.splitter || ';') + '?v=' + options.updateTime;
-            console.log(uri);
+            // console.log(uri);
             if (options.serverLogicToggle == true) {
                 var linkTag = '';
                 linkTag += '<% if (' + options.serverLogicCondition + ') { %>';
