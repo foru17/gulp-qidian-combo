@@ -41,9 +41,10 @@ module.exports = function(baseUri, options) {
         var genComboScriptUriTag = function() {
             // 定制
             var uri,
-                nocomboUri='',
+                nocomboUri = '',
                 _PathJs = [],
                 _rawPathJs = [];
+
             if (!!options.ignorePathVar) {
                 // 去掉模板中的服务区环境路径变量
                 var _links = src.scripts,
@@ -57,7 +58,14 @@ module.exports = function(baseUri, options) {
                 }
                 // console.log(_PathJs);
             }
-            uri = baseUri + _rawPathJs.join(options.splitter || ';') + '?v=' + options.updateTime;
+
+            uri = baseUri + _rawPathJs.join(options.splitter || ';');
+            //如果存在时间参数,则在combo后的url增加时间戳
+            if (!!options.updateTime) {
+                uri += '?v=' + options.updateTime;
+            }
+
+
             // 定制
             var scriptTag = '<script type="text/javascript" src="//' + uri + '"></script>';
             var async = options.async || false;
@@ -100,7 +108,6 @@ module.exports = function(baseUri, options) {
                 _rawPathCss = [];
             if (!!options.ignorePathVar) {
                 // 去掉模板中的服务区环境路径变量
-
                 var _links = src.links,
                     _ignorePathVar = options.ignorePathVar || '',
                     _assignPathTag = '/' + options.assignPathTag || '';
@@ -111,10 +118,12 @@ module.exports = function(baseUri, options) {
 
                     nocomboUri += '<link rel="stylesheet"  href="' + _links[i] + '" />' + '\n';
                 }
-
                 // console.log(_PathCss);
             }
-            uri = baseUri + _rawPathCss.join(options.splitter || ';') + '?v=' + options.updateTime;
+            uri = baseUri + _rawPathCss.join(options.splitter || ';');
+            if (!!options.updateTime) {
+                uri += '?v=' + options.updateTime;
+            }
             // console.log(uri);
             if (options.serverLogicToggle == true) {
                 var linkTag = '';
@@ -134,7 +143,6 @@ module.exports = function(baseUri, options) {
             // linkTag
 
             var comboToggle;
-
 
 
 

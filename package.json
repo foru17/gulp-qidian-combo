@@ -1,6 +1,6 @@
 {
   "name": "gulp-qidian-combo",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "html scripts, links combo for gulp",
   "main": "index.js",
   "homepage": "https://github.com/foru17/gulp-qidian-combo",
@@ -40,10 +40,10 @@
   ],
   "directories": {},
   "gitHead": "e8cc94aec3a1db6f720d24836dbf7f4688943302",
-  "_id": "gulp-combo@0.1.9",
+  "_id": "gulp-qidian-combo@0.2.0",
   "scripts": {},
-  "_shasum": "386459d2608c11b3e1486e41c6657b79cb023854",
-  "_from": "gulp-combo@>=0.1.9 <0.2.0",
+  "_shasum": "040de07e7a97a295f5cb0c41dca5768e2284a100",
+  "_from": "gulp-qidian-combo@0.2.0",
   "_npmVersion": "1.4.21",
   "_npmUser": {
     "name": "foru17",
@@ -54,5 +54,5 @@
     "tarball": "http://registry.npmjs.org/gulp-combo/-/gulp-combo-0.1.9.tgz"
   },
   "_resolved": "https://registry.npmjs.org/gulp-combo/-/gulp-combo-0.1.9.tgz",
-  "readme": "ERROR: No README data found!"
+  "readme": "README.md"
 }
