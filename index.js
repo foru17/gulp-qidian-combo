@@ -28,9 +28,7 @@ module.exports = function(baseUri, options) {
     baseUri = baseUri || 'http://qidian.gtimg.com/c/=';
     options = options || {};
 
-    // console.log(options);
 
-    // console.log(chalk.green('===Qidian.com=== '));
     return through.obj(function(file, enc, cb) {
         var chunk = String(file.contents);
         var src = {
@@ -48,8 +46,15 @@ module.exports = function(baseUri, options) {
             if (!!options.ignorePathVar) {
                 // 去掉模板中的服务区环境路径变量
                 var _links = src.scripts,
-                    _ignorePathVar = options.ignorePathVar || '',
-                    _assignPathTag = '/' + options.assignPathTag || '';
+                    _ignorePathVar = options.ignorePathVar || '';
+
+                if (!!options.assignPathTag) {
+                    var _assignPathTag = '/' + options.assignPathTag || '';
+                } else {
+                    var _assignPathTag = '';
+                }
+
+
 
                 for (var i = 0; i < _links.length; i++) {
                     _rawPathJs.push(_assignPathTag + _links[i].replace(_ignorePathVar, ''));
@@ -109,8 +114,12 @@ module.exports = function(baseUri, options) {
             if (!!options.ignorePathVar) {
                 // 去掉模板中的服务区环境路径变量
                 var _links = src.links,
-                    _ignorePathVar = options.ignorePathVar || '',
-                    _assignPathTag = '/' + options.assignPathTag || '';
+                    _ignorePathVar = options.ignorePathVar || '';
+                if (!!options.assignPathTag) {
+                    var _assignPathTag = '/' + options.assignPathTag || '';
+                } else {
+                    var _assignPathTag = '';
+                }
 
                 for (var i = 0; i < _links.length; i++) {
                     _PathCss.push(src.links)
@@ -164,8 +173,8 @@ module.exports = function(baseUri, options) {
             }
 
             if ($.match(/http:\/\//igm)) {
-                if ($1.match(/^http:\/\/mc.meituan.net\//igm)) {
-                    src.scripts.push($1.replace('http://mc.meituan.net/', ''));
+                if ($1.match(/^http:\/\/qidian.gtimg.com\//igm)) {
+                    src.scripts.push($1.replace('http://qidian.gtimg.com/', ''));
                 } else {
                     return $;
                 }
@@ -187,8 +196,8 @@ module.exports = function(baseUri, options) {
             }
 
             if ($.match(/http:\/\//igm)) {
-                if ($1.match(/^http:\/\/mc.meituan.net\//igm)) {
-                    src.links.push($1.replace('http://mc.meituan.net/', ''));
+                if ($1.match(/^http:\/\/qidian.gtimg.com\//igm)) {
+                    src.links.push($1.replace('http://qidian.gtimg.com/', ''));
                 } else {
                     return $;
                 }
