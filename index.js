@@ -84,7 +84,7 @@ module.exports = function(baseUri, options) {
             }
 
             if (async === true) {
-                scriptTag = '<script type="text/javascript" data-ignore="true" src="//' + uri + '" async="async"></script>';
+                scriptTag = '<script type="text/javascript" data-ignore="true" src="' + uri + '" async="async"></script>';
             }
 
             if (options.serverLogicToggle == true) {
@@ -138,7 +138,7 @@ module.exports = function(baseUri, options) {
                 var linkTag = '';
                 linkTag += '<% if (' + options.serverLogicCondition + ') { %>';
                 linkTag += '\n';
-                linkTag += '<link rel="stylesheet" data-ignore="true" href="//' + uri + '" />';
+                linkTag += '<link rel="stylesheet" data-ignore="true" href="' + uri + '" />';
                 linkTag += '\n';
                 linkTag += '<% } else {%>'
                 linkTag += '\n';
@@ -146,7 +146,7 @@ module.exports = function(baseUri, options) {
                 linkTag += '\n';
                 linkTag += ' <% } %>';
             } else {
-                var linkTag = '<link rel="stylesheet" data-ignore="true" href="//' + uri + '" />';
+                var linkTag = '<link rel="stylesheet" data-ignore="true" href="' + uri + '" />';
             }
 
             // linkTag
